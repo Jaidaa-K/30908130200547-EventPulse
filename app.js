@@ -26,6 +26,15 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 // express-mongo-sanitize crashes Express as Express (version 5) make req.query read-only.
 // This block of code creates a writable copy so express-mongo-sanitize can modify it.
 app.use((req, res, next) => {
