@@ -363,7 +363,9 @@ The API is designed to be deployed to a cloud platform such as Vercel.
 
 Vercel link:
 
-  
+```
+https://30908130200547-event-pulse.vercel.app
+```
 
 **EventPulse API**
 
