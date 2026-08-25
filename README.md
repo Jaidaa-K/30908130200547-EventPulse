@@ -1,8 +1,8 @@
-# EventPulse API
+# 30908130200547-EventPulse
 
 A RESTful backend API for managing events, users, registrations, and real-time event announcements.
 
-EventPulse was built with Node.js, Express, MongoDB, Mongoose, JWT authentication, Socket.io, Swagger, Jest, and Supertest.
+30908130200547-EventPulse was built with Node.js, Express, MongoDB, Mongoose, JWT authentication, Socket.io, Swagger, Jest, and Supertest.
 
 ## Features
 
@@ -41,7 +41,7 @@ EventPulse was built with Node.js, Express, MongoDB, Mongoose, JWT authenticatio
 ## Project Structure
 
 ``` text
-EventPulse/
+30908130200547-EventPulse/
   - config/
     - db.js
     - swagger.js
@@ -129,7 +129,7 @@ npm run dev
 npm start
 ```
 
-The API will normally be available at:
+The API be available at:
 
 ```
 http://localhost:3000
@@ -154,45 +154,37 @@ Swagger UI is available at:
 http://localhost:3000/api-docs
 ```
 
-Swagger provides interactive documentation for the API, including
-request parameters, request bodies, authentication, and responses.
-
 ## Main API Endpoints
 
 ### Authentication
 
-  Method   Endpoint               Description
-  -------- ---------------------- -------------------------
-  POST     `/api/auth/register`   Register a new user
-  POST     `/api/auth/login`      Login and receive a JWT
+  Method  | Endpoint              | Description
+  ------- | --------------------- | -------------------------
+  POST    | `/api/auth/register`  | Register a new user
+  POST    | `/api/auth/login`     | Login and receive a JWT
 
 ### Events
 
-  Method   Endpoint            Description
-  -------- ------------------- --------------------
-  GET      `/api/events`       Get all events
-  GET      `/api/events/:id`   Get an event by ID
-  POST     `/api/events`       Create an event
-  PATCH    `/api/events/:id`   Update an event
-  DELETE   `/api/events/:id`   Delete an event
+  Method  |  Endpoint          |  Description
+  ------- | ------------------ | --------------------
+  GET     | `/api/events`      | Get all events
+  GET     | `/api/events/:id`  | Get an event by ID
+  POST    | `/api/events`      | Create an event
+  PATCH   | `/api/events/:id`  | Update an event
+  DELETE  | `/api/events/:id`  | Delete an event
 
 Event listing supports filtering, searching, sorting, pagination, city
 filtering, category filtering, and date ranges.
 
 ### Registrations
 
-  --------------------------------------------------------------------------
-  Method                  Endpoint                   Description
-  ----------------------- -------------------------- -----------------------
-  POST                    `/api/registrations`       Register the
-                                                     authenticated attendee
-                                                     for an event
-
-  GET                     `/api/registrations/my`    Get the authenticated
-                                                     user's registrations
-
-  DELETE                  `/api/registrations/:id`   Cancel a registration
-  --------------------------------------------------------------------------
+  
+  Method                 | Endpoint                  | Description
+  ---------------------- | ------------------------- | -----------------------
+  POST                   | `/api/registrations`      | Register the authenticated attendee for an event
+  GET                    | `/api/registrations/my`   | Get the authenticated user's registrations
+  DELETE                 | `/api/registrations/:id`  | Cancel a registration
+  
 
 Registration validation rules:
 
@@ -204,15 +196,11 @@ Registration validation rules:
 
 ### Announcements
 
-  -------------------------------------------------------------------------------
-  Method                  Endpoint                        Description
-  ----------------------- ------------------------------- -----------------------
-  POST                    `/api/announcements`            Create and broadcast an
-                                                          announcement
-
-  GET                     `/api/announcements/:eventId`   Get announcement
-                                                          history for an event
-  -------------------------------------------------------------------------------
+  Method                 |  Endpoint                      |  Description
+  ---------------------- | ------------------------------ | -----------------------
+  POST                   | `/api/announcements`           | Create and broadcast an announcement
+  GET                    | `/api/announcements/:eventId`  | Get announcement history for an event
+  
 
 Creating announcements is restricted to authenticated administrators.
 
@@ -283,13 +271,13 @@ The API uses centralized error handling.
 
 Common error types include:
 
-  Error                                  Status
-  -------------------------- ------------------
-  Validation Error                          400
-  Invalid MongoDB ObjectId                  400
-  Duplicate Key                             409
-  AppError                     Defined by error
-  Unhandled Error                           500
+  Error                     |             Status
+  ------------------------- | ------------------
+  Validation Error          |                400
+  Invalid MongoDB ObjectId  |               400
+  Duplicate Key             |                409
+  AppError                  |  Defined by error
+  Unhandled Error           |                500
 
 Errors are handled by the centralized error-handling middleware.
 
@@ -331,7 +319,7 @@ GET /health
 
 ## Postman
 
-A Postman collection can be used to test the API manually.
+A Postman collection is used to test the API manually.
 
 The collection include folders for:
 
@@ -346,15 +334,15 @@ environment and reuse it in protected endpoints.
 ## Environment Variables
 
 
-  Variable                Purpose
-  ----------------------- ---------------------------------
-  `PORT`                  Server port
-  `MONGO_URI`             MongoDB Atlas connection string
-  `JWT_SECRET`            Secret used to sign JWT tokens
-  `NODE_ENV`              Application environment
-  `SEED_ADMIN_NAME`       Seed administrator name
-  `SEED_ADMIN_EMAIL`      Seed administrator email
-  `SEED_ADMIN_PASSWORD`   Seed administrator password
+  Variable               | Purpose
+  ---------------------- | ---------------------------------
+  `PORT`                 | Server port
+  `MONGO_URI`            | MongoDB Atlas connection string
+  `JWT_SECRET`           | Secret used to sign JWT tokens
+  `NODE_ENV`             | Application environment
+  `SEED_ADMIN_NAME`      | Seed administrator name
+  `SEED_ADMIN_EMAIL`     | Seed administrator email
+  `SEED_ADMIN_PASSWORD`  | Seed administrator password
 
 
 ## Deployment
