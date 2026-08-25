@@ -90,8 +90,8 @@ A RESTful backend API for managing events, users, registrations, and real-time e
 ### 1. Clone the project
 
 ``` bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd EventPulse
+git clone <https://github.com/Jaidaa-K/30908130200547-EventPulse>
+cd 30908130200547-EventPulse
 ```
 
 ### 2. Install dependencies
