@@ -1,7 +1,7 @@
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 
-// MongoDB Atlas is not working in the defualt dns, so I changed it
+
 const dns = require('dns');
 dns.setServers(['8.8.8.8', '1.1.1.1']);
 
