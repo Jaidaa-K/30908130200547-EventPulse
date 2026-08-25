@@ -118,13 +118,17 @@ app.use(errorHandler);
 async function start() {
   await connectDB();
 
-  app.listen(process.env.PORT, () => {
+  httpServer.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
   });
 }
 
 if (require.main === module) {
   start();
+} else {
+  connectDB().catch((error) => {
+    console.error('MongoDB connection failed:', error.message);
+  });
 }
 
 module.exports = app;
